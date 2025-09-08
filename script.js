@@ -29,21 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to save data to text file
     function saveToTextFile(filename, content) {
         try {
-            // Create a blob with the content
-            const blob = new Blob([content], { type: 'text/plain' });
+            // Create a data URL for the content
+            const dataUrl = 'data:text/plain;charset=utf-8,' + encodeURIComponent(content);
 
             // Create a temporary link element
             const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
+            link.href = dataUrl;
             link.download = filename;
 
             // Programmatically click the link to trigger download
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-
-            // Clean up the URL object
-            URL.revokeObjectURL(link.href);
 
             return true;
         } catch (error) {
