@@ -1,0 +1,16 @@
+{
+  "name": "paperpulse-forms",
+  "version": "1.0.0",
+  "description": "PaperPulse Consulting website with Excel-based form data storage",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "keywords": ["paperpulse", "consulting", "forms", "excel"],
+  "author": "PaperPulse Consulting",
+  "license": "MIT"
+}
